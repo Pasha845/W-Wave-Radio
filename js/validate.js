@@ -1,5 +1,15 @@
-new JustValidate('.modal-form')
-.addField('#text', [
+const modal = new JustValidate('.modal-form', {
+  errorFieldCssClass: 'is-invalid',
+  errorLabelStyle: {
+    left: "32px",
+    top: "9px",
+    fontSize: "12px",
+    color: '#D11616'
+  }
+});
+
+modal
+.addField('#log', [
   {
     rule: 'minLength',
     value: 3,
@@ -17,6 +27,7 @@ new JustValidate('.modal-form')
   {
     rule: 'minLength',
     value: 3,
+    errorMessage: 'Пароль слишком короткий'
   },
   {
     rule: 'maxLength',
@@ -28,23 +39,18 @@ new JustValidate('.modal-form')
   }
 ])
 
-const validation = new JustValidate('.about__form', {
+const about = new JustValidate('.about__form', {
   errorFieldCssClass: 'is-invalid',
-  errorFieldStyle: {
-    border: '1px solid red',
+  errorLabelStyle: {
+    left: "32px",
+    top: "9px",
+    fontSize: "12px",
+    color: '#D11616'
   }
 });
 
-validation
+about
   .addField('#text', [
-    {
-      rule: 'minLength',
-      value: 3,
-    },
-    {
-      rule: 'maxLength',
-      value: 30,
-    },
     {
       rule: 'required',
       errorMessage: 'Ошибка'
@@ -54,10 +60,12 @@ validation
   {
     rule: 'minLength',
     value: 3,
+    errorMessage: 'Имя дожно состоять минимум из 3 символов'
   },
   {
     rule: 'maxLength',
     value: 30,
+    errorMessage: 'Имя больше 30 символов'
   },
   {
     rule: 'required',
