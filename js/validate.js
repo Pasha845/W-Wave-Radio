@@ -1,4 +1,5 @@
 const modal = new JustValidate('.modal-form', {
+  successFieldCssClass: "is-valid",
   errorFieldCssClass: 'is-invalid',
   errorLabelStyle: {
     left: "32px",
@@ -39,7 +40,15 @@ modal
   }
 ])
 
+.onSuccess(() => {
+  document.getElementById('modal').style.visibility = "hidden";
+  document.getElementById('modal').style.opacity = 0;
+  document.getElementById('pop-up').style.visibility = "visible";
+  document.getElementById('pop-up').style.opacity = 1;
+})
+
 const about = new JustValidate('.about__form', {
+  successFieldCssClass: "is-valid",
   errorFieldCssClass: 'is-invalid',
   errorLabelStyle: {
     left: "32px",
@@ -80,6 +89,6 @@ about
 ])
 
 .onSuccess(() => {
-  document.getElementById('popup').style.visibility = "visible";
-  document.getElementById('popup').style.opacity = 1;
+  document.getElementById('pop-up').style.visibility = "visible";
+  document.getElementById('pop-up').style.opacity = 1;
 })
