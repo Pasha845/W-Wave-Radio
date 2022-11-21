@@ -75,6 +75,7 @@ img, svg {
   --red: #D52B1E;
   --promo_color: #F0D288;
   --promo_color_shade: #BB973E;
+  --green: #B8EC64;
 }
 
 body {
@@ -254,6 +255,10 @@ body {
   transition: none;
 }
 
+.focus-link {
+  position: relative;
+}
+
 .container-focus-link {
   position: relative;
   top: 0;
@@ -319,24 +324,28 @@ body {
   width: 824px;
   position: relative;
   background-color: var(--black);
-  transition: all 5s ease-in-out;
+  transition: .5s;
 }
 
 .modal-close {
   position: absolute;
   top: 30px;
   right: 30px;
-  transition: all 200ms;
+  transition: color .3s;
 }
 
-.container-popap-div {
+.modal-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 78px;
 }
 
-.container-popap-text {
+.modal-div svg {
+  margin-bottom: 30px;
+}
+
+.modal-text {
   font-size: 32px;
   line-height: 1;
   color: var(--black);
@@ -415,6 +424,16 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.main-link-group {
+  display: flex;
+  align-items: center;
+}
+
+.main-arrow {
+  position: relative;
+  margin-right: 6px;
 }
 
 @media (max-width: 1200px) {
@@ -599,10 +618,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .header__link-margin:not(:last-child) {
   margin-right: 58px;
-}
-
-.header__focus-link {
-  position: relative;
 }
 
 .header__find:focus {
@@ -810,7 +825,11 @@ input[type="search"]::-webkit-search-results-decoration {
     display: block; 
   }
 
-  .header__burger-menu  {
+  .header__menu-exit {
+    margin-bottom: 26px;
+  }
+
+  .header__burger-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -823,16 +842,16 @@ input[type="search"]::-webkit-search-results-decoration {
     left: 0;
     top: 60px;
     display: none;
-    padding-top: 28px;
-    padding-left: 113px;
-    padding-right: 113px;
+    padding-top: 30px;
+    padding-left: 114px;
+    padding-right: 48px;
     padding-bottom: 50px;
     width: 100%;
     height: calc(100vh - 100px);
     background-color: var(--shade_gray);
   }
   
-  .header__burger-menu .is-opened {
+  .header__burger-menu.is-opened {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -842,7 +861,7 @@ input[type="search"]::-webkit-search-results-decoration {
     animation-duration: .5s;
   }
 
-  .header__burger-menu .is-closed {
+  .header__burger-menu.is-closed {
     -webkit-animation-name: menu-close;
     animation-name: menu-close;
     -webkit-animation-duration: .5s;
@@ -859,15 +878,19 @@ input[type="search"]::-webkit-search-results-decoration {
     flex-direction: column;
     -webkit-box-align: start;
     -ms-flex-align: start;
+    column-count: 2;
     align-items: flex-start;
     overflow-y: auto;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    margin-bottom: 55px;
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 188px;
     font-size: 20px;
     line-height: 1;
+  }
+
+  .header__link-margin {
+    margin-bottom: 64px;
   }
 
   .header__focus-link {
@@ -885,7 +908,7 @@ input[type="search"]::-webkit-search-results-decoration {
     -ms-flex-align: center;
     align-items: center;
     padding: 20px;
-    border: 2px solid red;
+    border: 2px solid;
     border-radius: 100px;
     width: 257px;
   }
@@ -1250,6 +1273,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 4px;
   font-size: 20px;
   line-height: 1;
+  font-weight: normal;
   color: var(--black);
 }
 
@@ -2593,16 +2617,6 @@ input[type="search"]::-webkit-search-results-decoration {
   transition: color .3s, background-color .3s;
 }
 
-.adv__main-link-group {
-  display: flex;
-  align-items: center;
-}
-
-.adv__main-arrow {
-  position: relative;
-  margin-right: 6px;
-}
-
 .adv__btn:hover {
   color: var(--black);
   background-color: var(--promo_color);
@@ -2871,8 +2885,12 @@ input[type="search"]::-webkit-search-results-decoration {
   line-height: 1;
 }
 
+.is-valid {
+  border-color: var(--green);
+}
+
 .is-invalid {
-  border: 1px solid var(--red);
+  border-color: var(--red);
 }
 
 .about__btn {
