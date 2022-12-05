@@ -31,8 +31,9 @@ modal
     errorMessage: 'Пароль слишком короткий'
   },
   {
-    rule: 'maxLength',
-    value: 30,
+    rule: 'customRegexp',
+    value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/,
+    errorMessage: 'Пароль слишком простой'
   },
   {
     rule: 'required',
@@ -43,8 +44,6 @@ modal
 .onSuccess(() => {
   document.getElementById('modal').style.visibility = "hidden";
   document.getElementById('modal').style.opacity = 0;
-  document.getElementById('pop-up').style.visibility = "visible";
-  document.getElementById('pop-up').style.opacity = 1;
 })
 
 const about = new JustValidate('.about__form', {
