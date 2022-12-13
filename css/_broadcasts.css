@@ -282,8 +282,12 @@
   color: var(--text_gray);
 }
 
+.broadcasts__link-div {
+  display: flex;
+  align-items: flex-start;
+}
+
 .broadcasts__link {
-  align-items: center;
   margin: 0;
   font-style: italic;
   font-size: 16px;
@@ -315,13 +319,12 @@
   outline: none;
 }
 
-.broadcasts__cube:focus .broadcasts__link,
-.broadcasts__cube:focus .broadcasts__main-arrow  {
+.broadcasts__link:focus .broadcasts__main-arrow {
   color: var(--white);
 }
 
 .broadcasts__cube:active .broadcasts__link,
-.broadcasts__cube:active .broadcasts__main-arrow  {
+.broadcasts__cube:active .broadcasts__main-arrow {
   color: var(--primary_shade);
 }
 
