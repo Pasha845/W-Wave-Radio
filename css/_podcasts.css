@@ -21,7 +21,8 @@
 }
 
 .podcatsts__section {
-  position: relative;
+  position: absolute;
+  z-index: 4;
 }
 
 .podcatsts__date {
@@ -42,6 +43,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 23px;
+  width: 100%;
 }
 
 .podcatsts__subbtn {
@@ -71,7 +73,7 @@
 }
 
 .podcatsts__div {
-  padding-left: 30px;
+  padding-left: 142px;
 }
 
 .podcatsts__time {
@@ -101,7 +103,7 @@
 }
 
 .podcatsts__links {
-  padding-left: 30px;
+  padding-left: 142px;
   border-top: 1px solid var(--light_color);
 }
 
