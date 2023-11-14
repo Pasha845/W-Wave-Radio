@@ -1,6 +1,6 @@
 # Одностраничный сайт для проекта "Радио W-Wave"
 
-![Desktop](https://user-images.githubusercontent.com/106194295/208979656-08808254-42f3-4147-a740-042e59121587.jpg)
+![image 1](https://github.com/Pasha845/W-Wave-Radio/assets/106194295/20e65fad-0e67-4f83-8d45-04280854adc1)
 
 ## В проекте использовались следующие библеотеки и плагины:
 
